@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Kelas XII TAV</title>
+
+<style>
+:root{
+    --bg:#f4f6f9;
+    --card:#ffffff;
+    --text:#222;
+    --primary:#2563eb;
+}
+
+body.dark{
+    --bg:#121212;
+    --card:#1e1e1e;
+    --text:#ffffff;
+    --primary:#60a5fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:.3s;
+}
+
+nav{
+    background:var(--card);
+    padding:15px;
+    position:sticky;
+    top:0;
+    border-bottom:1px solid rgba(128,128,128,.2);
+    z-index:100;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+#themeBtn{
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    color:var(--primary);
+}
+
+section{
+    max-width:1000px;
+    margin:20px auto;
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+h2{
+    color:var(--primary);
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.tree{
+    text-align:center;
+}
+
+.node{
+    display:inline-block;
+    padding:10px 20px;
+    border:2px solid var(--primary);
+    border-radius:12px;
+    margin:10px;
+    font-weight:bold;
+}
+
+.line{
+    width:2px;
+    height:30px;
+    background:var(--primary);
+    margin:auto;
+}
+
+.row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+<body>
+
+<button id="themeBtn">🌙</button>
+
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#profil">Profil</a></li>
+<li><a href="#struktur">Struktur</a></li>
+<li><a href="#galeri">Galeri</a></li>
+</ul>
+</nav>
+
+<header id="home">
+<h1>XII TAV</h1>
+<p>SMK Negeri 3 Karawang</p>
+</header>
+
+<section id="profil">
+<h2>Profil Kelas</h2>
+<p>
+Selamat datang di website resmi kelas XII TAV.
+Website ini digunakan untuk berbagi informasi dan kegiatan kelas.
+</p>
+</section>
+
+<section id="struktur">
+<h2>Struktur Organisasi Kelas</h2>
+
+<div class="tree">
+
+<div class="node">
+👨‍🏫 Wali Kelas<br>
+<small>Nama Walas</small>
+</div>
+
+<div class="line"></div>
+
+<div class="node">
+👑 Ketua Kelas<br>
+<small>Nama Ketua</small>
+</div>
+
+<div class="line"></div>
+
+<div class="node">
+🤝 Wakil Ketua<br>
+<small>Nama Wakil</small>
+</div>
+
+<div class="line"></div>
+
+<div class="row">
+    <div class="node">
+        📝 Sekretaris<br>
+        <small>Nama Sekretaris</small>
+    </div>
+
+    <div class="node">
+        💰 Bendahara 1<br>
+        <small>Nama Bendahara 1</small>
+    </div>
+
+    <div class="node">
+        💰 Bendahara 2<br>
+        <small>Nama Bendahara 2</small>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<div class="node">
+🧹 Penanggung Jawab Harian
+</div>
+
+<div class="line"></div>
+
+<div class="row">
+    <div class="node">📅 Senin<br>
+<small>Nama Walas</small></div>
+    <div class="node">📅 Selasa<br>
+<small>Nama Walas</small></div>
+    <div class="node">📅 Rabu<br>
+<small>Nama Walas</small></div>
+    <div class="node">📅 Kamis<br>
+<small>Nama Walas</small></div>
+    <div class="node">📅 Jumat<br>
+<small>Nama Walas</small></div>
+</div>
+
+</div>
+</section>
+  
+<section id="galeri">
+<h2>Galeri Kelas</h2>
+
+<div class="gallery">
+    <img src="foto1.jpg" alt="Foto Kelas">
+    <img src="foto2.jpg" alt="Foto Kelas">
+    <img src="foto3.jpg" alt="Foto Kelas">
+    <img src="foto4.jpg" alt="Foto Kelas">
+</div>
+
+</section>
+
+<footer>
+© 2026 XII TAV
+</footer>
+
+<script>
+const btn = document.getElementById("themeBtn");
+
+if(localStorage.getItem("theme")==="dark"){
+    document.body.classList.add("dark");
+    btn.innerHTML="☀️";
+}
+
+btn.addEventListener("click",()=>{
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        btn.innerHTML="☀️";
+    }else{
+        localStorage.setItem("theme","light");
+        btn.innerHTML="🌙";
+    }
+});
+</script>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
