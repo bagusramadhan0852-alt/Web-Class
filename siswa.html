@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Siswa XII TAV</title>
+
+<style>
+:root{
+    --bg:#f4f6f9;
+    --card:#ffffff;
+    --text:#222;
+    --primary:#2563eb;
+}
+
+body.dark{
+    --bg:#121212;
+    --card:#1e1e1e;
+    --text:#ffffff;
+    --primary:#60a5fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+nav{
+    background:var(--card);
+    padding:15px;
+    position:sticky;
+    top:0;
+    border-bottom:1px solid rgba(128,128,128,.2);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.active{
+    color:var(--primary);
+}
+
+.container{
+    max-width:1000px;
+    margin:20px auto;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:var(--primary);
+}
+
+#search{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border-radius:15px;
+    overflow:hidden;
+}
+
+th,td{
+    padding:12px;
+    text-align:left;
+    border-bottom:1px solid rgba(128,128,128,.2);
+}
+
+th{
+    background:var(--primary);
+    color:white;
+}
+
+tr:hover{
+    background:rgba(128,128,128,.1);
+}
+
+.total{
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+#themeBtn{
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<button id="themeBtn">🌙</button>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#profil">Profil</a></li>
+<li><a href="index.html#struktur">Struktur</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="siswa.html" class="active">Siswa</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<h1>Daftar Siswa XII TAV</h1>
+
+<div class="total">Total Siswa: 34</div>
+
+<input type="text" id="search" placeholder="🔍 Cari nama siswa...">
+
+<table id="studentTable">
+<tr>
+<th>No</th>
+<th>Nama</th>
+</tr>
+
+<tr><td>1</td><td>Adit</td></tr>
+<tr><td>2</td><td>Agus</td></tr>
+<tr><td>3</td><td>Aidah</td></tr>
+<tr><td>4</td><td>Akmal</td></tr>
+<tr><td>5</td><td>Aldi</td></tr>
+<tr><td>6</td><td>Alpian</td></tr>
+<tr><td>7</td><td>Ari</td></tr>
+<tr><td>8</td><td>Ayu</td></tr>
+<tr><td>9</td><td>Azkar</td></tr>
+<tr><td>10</td><td>Bagus</td></tr>
+<tr><td>11</td><td>Cheryl</td></tr>
+<tr><td>12</td><td>Daffa</td></tr>
+<tr><td>13</td><td>Deden</td></tr>
+<tr><td>14</td><td>Dinda</td></tr>
+<tr><td>15</td><td>Eval</td></tr>
+<tr><td>16</td><td>Fahmi</td></tr>
+<tr><td>17</td><td>Faisal</td></tr>
+<tr><td>18</td><td>Farel</td></tr>
+<tr><td>19</td><td>Febri</td></tr>
+<tr><td>20</td><td>Febrian</td></tr>
+<tr><td>21</td><td>Gilang</td></tr>
+<tr><td>22</td><td>Hafiz</td></tr>
+<tr><td>23</td><td>Jujun</td></tr>
+<tr><td>24</td><td>Kurniawan</td></tr>
+<tr><td>25</td><td>Metha</td></tr>
+<tr><td>26</td><td>Lutfi</td></tr>
+<tr><td>27</td><td>Rifky</td></tr>
+<tr><td>28</td><td>Dika</td></tr>
+<tr><td>29</td><td>Irfan</td></tr>
+<tr><td>30</td><td>Musa</td></tr>
+<tr><td>31</td><td>Nathania</td></tr>
+<tr><td>32</td><td>Nopia</td></tr>
+<tr><td>33</td><td>Wisnu</td></tr>
+<tr><td>34</td><td>Zulfi</td></tr>
+
+</table>
+
+</div>
+
+<script>
+const search = document.getElementById("search");
+
+search.addEventListener("keyup", function() {
+    let filter = search.value.toLowerCase();
+    let rows = document.querySelectorAll("#studentTable tr");
+
+    rows.forEach((row, index) => {
+        if(index === 0) return;
+
+        let text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    });
+});
+
+const btn = document.getElementById("themeBtn");
+
+if(localStorage.getItem("theme")==="dark"){
+    document.body.classList.add("dark");
+    btn.innerHTML="☀️";
+}
+
+btn.addEventListener("click",()=>{
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+        btn.innerHTML="☀️";
+    }else{
+        localStorage.setItem("theme","light");
+        btn.innerHTML="🌙";
+    }
+});
+</script>
+
+</body>
+  </html>
